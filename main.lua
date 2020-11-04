@@ -1,4 +1,6 @@
 push = require 'push'
+Class = require 'class'
+require 'Bird'
 
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
@@ -18,6 +20,8 @@ local buildings2Scroll = 0
 local BACKGROUND_SCROLL_SPEED = 25
 local BUILDINGS_1_SCROLL_SPEED = 60
 local BUILDINGS_2_SCROLL_SPEED = 50
+
+local bird = Bird()
 
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
@@ -67,6 +71,8 @@ function love.draw()
 
     love.graphics.draw(buildings1, -buildings1Scroll, 0)
     love.graphics.draw(buildings1, VIRTUAL_WIDTH - buildings1Scroll, 0)
+
+    bird:render()
 
     displayFPS()
 
