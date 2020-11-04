@@ -58,6 +58,8 @@ function love.update(dt)
     buildings2Scroll = (buildings2Scroll + BUILDINGS_2_SCROLL_SPEED * dt)
         % VIRTUAL_WIDTH
 
+    bird:update(dt)
+
 end
 
 function love.draw()
